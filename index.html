@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Альма Тьютор — сервис по подбору репетиторов для студентов. Подача заявок для студентов и преподавателей.">
+    <title>Альма Тьютор — подбор репетиторов для студентов</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- 1. Шапка: логотип + название -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="#" class="logo" aria-label="Альма Тьютор — на главную">
+                <svg class="logo-mark" viewBox="0 0 48 48" width="44" height="44" aria-hidden="true">
+                    <path d="M24 6 3 17l21 11 18-9.4V32h3V17L24 6z" fill="currentColor"/>
+                    <path d="M9 22.5V31c0 4.4 6.7 8 15 8s15-3.6 15-8v-8.5l-15 7.9-15-7.9z" fill="currentColor" opacity=".75"/>
+                    <circle cx="39" cy="31" r="1.8" fill="currentColor"/>
+                    <path d="M39 31v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+                <span class="logo-text">
+                    <span class="logo-name">Альма Тьютор</span>
+                    <span class="logo-tagline">репетиторы для студентов</span>
+                </span>
+            </a>
+            <nav class="main-nav" aria-label="Основная навигация">
+                <a href="#how-it-works">Как это работает</a>
+                <a href="#cases">Кейсы</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 2. Главный экран: заголовок, подзаголовок, два CTA-блока -->
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero-title">Найдём идеального репетитора<br>или дадим вам возможность преподавать</h1>
+                <p class="hero-subtitle">«Альма Тьютор» соединяет студентов, которым нужна помощь в учёбе,
+                    с сильными преподавателями. Оставьте заявку — и мы подберём подходящий вариант.</p>
+
+                <!-- 3. Два больших CTA-блока, открывающих формы -->
+                <div class="cta-grid">
+                    <button type="button" class="cta-card cta-card--tutor" data-form-target="form-tutor">
+                        <span class="cta-icon" aria-hidden="true">🎓</span>
+                        <span class="cta-title">Я репетитор</span>
+                        <span class="cta-desc">Хотите преподавать и зарабатывать? Заполните анкету преподавателя.</span>
+                        <span class="cta-action">Стать репетитором →</span>
+                    </button>
+
+                    <button type="button" class="cta-card cta-card--student" data-form-target="form-student">
+                        <span class="cta-icon" aria-hidden="true">📚</span>
+                        <span class="cta-title">Хочу найти репетитора</span>
+                        <span class="cta-desc">Расскажите о предмете и цели — подберём подходящего преподавателя.</span>
+                        <span class="cta-action">Найти репетитора →</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Блоки с формами (Google Forms). При клике на CTA раскрывается соответствующий блок -->
+        <section class="forms" id="forms">
+            <div class="container">
+
+                <!-- Форма заявки для репетиторов -->
+                <div class="form-panel" id="form-tutor" hidden>
+                    <div class="form-panel-head">
+                        <h2>Анкета репетитора</h2>
+                        <button type="button" class="form-close" data-close-target="form-tutor" aria-label="Закрыть форму">✕</button>
+                    </div>
+                    <p class="form-hint">Заполните форму Google — это займёт около 3 минут.
+                        После проверки анкеты мы пригласим вас к сотрудничеству.</p>
+                    <!--
+                        ЗАМЕНИТЕ ссылку ниже на URL вашей Google-формы для репетиторов.
+                        Встроенная форма отображается прямо на сайте; ссылка под ней — запасной вариант.
+                    -->
+                    <div class="frame-wrap frame-wrap--tall">
+                        <iframe
+                            src="https://docs.google.com/forms/d/e/1FAIpQLSfXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/viewform?embedded=true"
+                            title="Google-форма: анкета репетитора"
+                            loading="lazy">Загрузка формы…</iframe>
+                    </div>
+                    <p class="form-alt">Форма не отображается?
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/viewform"
+                           target="_blank" rel="noopener">Откройте её в новой вкладке →</a>
+                    </p>
+                </div>
+
+                <!-- Форма заявки для студентов -->
+                <div class="form-panel" id="form-student" hidden>
+                    <div class="form-panel-head">
+                        <h2>Заявка на подбор репетитора</h2>
+                        <button type="button" class="form-close" data-close-target="form-student" aria-label="Закрыть форму">✕</button>
+                    </div>
+                    <p class="form-hint">Опишите предмет, цель (экзамен, сессия, подтянуть оценки) и удобное время —
+                        мы подберём преподавателя и свяжемся с вами.</p>
+                    <!--
+                        ЗАМЕНИТЕ ссылку ниже на URL вашей Google-формы для студентов.
+                    -->
+                    <div class="frame-wrap frame-wrap--tall">
+                        <iframe
+                            src="https://docs.google.com/forms/d/e/1FAIpQLSfYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY/viewform?embedded=true"
+                            title="Google-форма: заявка студента"
+                            loading="lazy">Загрузка формы…</iframe>
+                    </div>
+                    <p class="form-alt">Форма не отображается?
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY/viewform"
+                           target="_blank" rel="noopener">Откройте её в новой вкладке →</a>
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4. Блок «Как это работает» (3 шага) -->
+        <section class="steps" id="how-it-works">
+            <div class="container">
+                <h2 class="section-title">Как это работает</h2>
+                <ol class="steps-list">
+                    <li class="step">
+                        <span class="step-num">1</span>
+                        <h3>Оставьте заявку</h3>
+                        <p>Выберите роль — студент или репетитор — и заполните короткую Google-форму
+                            о предмете, опыте и пожеланиях.</p>
+                    </li>
+                    <li class="step">
+                        <span class="step-num">2</span>
+                        <h3>Мы подберём пару</h3>
+                        <p>Сопоставим запрос студента с анкетами преподавателей: предмет, уровень,
+                            график и формат занятий.</p>
+                    </li>
+                    <li class="step">
+                        <span class="step-num">3</span>
+                        <h3>Начнёте заниматься</h3>
+                        <p>Свяжем вас напрямую: первое занятие — знакомство, дальше — регулярные уроки
+                            онлайн или офлайн.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- 5. Блок с примерами кейсов (заглушки) -->
+        <section class="cases" id="cases">
+            <div class="container">
+                <h2 class="section-title">Примеры из практики</h2>
+                <p class="section-subtitle">Скоро здесь появятся реальные истории наших студентов и преподавателей.</p>
+                <div class="cases-grid">
+                    <article class="case-card case-card--placeholder">
+                        <span class="case-tag">Кейс скоро будет</span>
+                        <h3>Подготовка к экзамену</h3>
+                        <p>Заглушка: здесь будет история студента, который подготовился к сложной сессии
+                            вместе с нашим репетитором.</p>
+                    </article>
+                    <article class="case-card case-card--placeholder">
+                        <span class="case-tag">Кейс скоро будет</span>
+                        <h3>Первый заработок преподавателя</h3>
+                        <p>Заглушка: здесь будет история выпускника, ставшего репетитором через «Альма Тьютор».</p>
+                    </article>
+                    <article class="case-card case-card--placeholder">
+                        <span class="case-tag">Кейс скоро будет</span>
+                        <h3>Сложный предмет за один семестр</h3>
+                        <p>Заглушка: здесь будет пример того, как правильный подбор репетитора меняет ситуацию
+                            с академической задолженностью.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 6. Футер с контактами -->
+    <footer class="site-footer" id="contacts">
+        <div class="container footer-inner">
+            <div class="footer-col footer-brand">
+                <span class="footer-logo">🎓 Альма Тьютор</span>
+                <p>Сервис по подбору репетиторов для студентов. Заявки от студентов и преподавателей —
+                    через простые формы.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Контакты</h4>
+                <ul>
+                    <li>E-mail: <a href="mailto:info@almatutor.ru">info@almatutor.ru</a></li>
+                    <li>Телефон: <a href="tel:+78001234567">8 (800) 123-45-67</a></li>
+                    <li>Telegram: <a href="https://t.me/almatutor" target="_blank" rel="noopener">@almatutor</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Разделы</h4>
+                <ul>
+                    <li><a href="#how-it-works">Как это работает</a></li>
+                    <li><a href="#cases">Кейсы</a></li>
+                    <li><a href="#forms">Подать заявку</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2026 Альма Тьютор. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Мини-скрипт: раскрытие нужной формы по клику на CTA-блок -->
+    <script src="js/main.js"></script>
+</body>
+</html>
